@@ -4,6 +4,7 @@ use App\Http\Controllers\RWController;
 use App\Http\Controllers\RTController;
 use App\Http\Controllers\WargaController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,5 +26,17 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/rukun_tetangga', [RTController::class, 'index']);
 //Route::get('/rukun_warga', [RWController::class, 'index']);
 
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'authenticate'])->name('login.auth');
+Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::post('/', [LoginController::class, 'authenticate'])->name('login.auth');
+
+Route::group([
+    'middleware' => ['auth', 'checkRole:Warga'],
+    'prefix' => 'Warga'
+], function () {
+    Route::get('/', [DashboardController::class, 'indexWarga']);
+    /**
+     * route for logout process
+     */
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->name('admin.logout');
+}
+);

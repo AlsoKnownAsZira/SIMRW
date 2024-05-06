@@ -11,7 +11,7 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('auth.login');
+        return view('login');
     }
 
     public function authenticate(Request $request): RedirectResponse
@@ -40,7 +40,7 @@ class LoginController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(match (Auth::user()->level) {
+        return redirect()->intended(match (Auth::user()->role) {
             /**
              * if user has RW roles
              */

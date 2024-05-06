@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -12,15 +13,33 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $table = 't_users';
+    protected $primaryKey = 'NIK';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
+        'KK',
+        'username',
         'password',
+        'nama_depan',
+        'nama_belakang',
+        'tempat_lahir',
+        'tanggal_lahir',
+        'agama',
+        'status_perkawinan',
+        'status_hubungan',
+        'pekerjaan',
+        'tipe_warga',
+        'role',
+        'jenis_kelamin',
+        'golongan_darah',
+        'alamat',
+        'id_RT',
+
     ];
 
     /**
@@ -42,4 +61,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function rukun_tetangga(): BelongsTo
+    {
+        return $this->BelongsTo(t_rukun_tetangga::class, 'id_RT', 'id_RT');
+    }
 }
