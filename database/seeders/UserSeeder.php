@@ -40,7 +40,7 @@ class UserSeeder extends Seeder
                 'NIK' => '123123',
                 'KK' => '123123',
                 'username' => 'PAKRW',
-                'password' => Hash::make('1234512345'),
+                'password' => Hash::make('12341234'),
                 'nama_depan' => 'NamaDepan',
                 'nama_belakang' => 'NamaBelakang',
                 'tempat_lahir' => 'TempatLahir',
@@ -55,7 +55,27 @@ class UserSeeder extends Seeder
                 'golongan_darah' => 'A',
                 'alamat' => 'Alamat Pengguna',
                 'created_at' => $currenttimestamp,
-            ]
+            ],
+            [
+                'NIK' => '12341234',
+                'KK' => '12341234',
+                'username' => 'PAKRT',
+                'password' => Hash::make('12341234'),
+                'nama_depan' => 'NamaDepan',
+                'nama_belakang' => 'NamaBelakang',
+                'tempat_lahir' => 'TempatLahir',
+                'tanggal_lahir' => '2000-01-01',
+                'agama' => 'Islam',
+                'status_perkawinan' => 'Belum Kawin',
+                'status_hubungan' => 'Kepala Keluarga',
+                'pekerjaan' => 'Pekerjaan',
+                'tipe_warga' => 'Domisili Lokal',
+                'role' => 'RT',
+                'jenis_kelamin' => 'Laki-laki',
+                'golongan_darah' => 'A',
+                'alamat' => 'Alamat Pengguna',
+                'created_at' => $currenttimestamp,
+            ],
         ];
 
         DB::table('t_users')->insert($data);
