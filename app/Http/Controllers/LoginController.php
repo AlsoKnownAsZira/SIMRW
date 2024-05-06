@@ -40,6 +40,9 @@ class LoginController extends Controller
 
         $request->session()->regenerate();
 
+
+        // return route('/warga');
+
         return redirect()->intended(match (Auth::user()->role) {
             /**
              * if user has RW roles
@@ -53,7 +56,7 @@ class LoginController extends Controller
              * if user has warga roles
              */
             'Warga' => 'Warga',
-            /**
+                /**
              * if user has no roles
              */
             default => '/',

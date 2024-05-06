@@ -25,13 +25,12 @@
             <div class="card">
                 <div class="card-header">Login</div>
                 <div class="card-body">
-                    <form id="login-form" method="POST" action="{{ route('login.auth') }}">
+                    <form id="login-form" method="post" action="{{ route('login.auth') }}">
                         @csrf
 
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input id="username" type="text" class="form-control" name="username"
-                                   value="{{ old('username') }}" required autofocus>
+                            <input id="username" type="text" class="form-control" name="username" required>
                         </div>
 
                         <div class="form-group">

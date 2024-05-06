@@ -29,14 +29,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::post('/', [LoginController::class, 'authenticate'])->name('login.auth');
 
-Route::group([
-    'middleware' => ['auth', 'checkRole:Warga'],
-    'prefix' => 'Warga'
-], function () {
-    Route::get('/', [DashboardController::class, 'indexWarga']);
-    /**
-     * route for logout process
-     */
-    Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->name('admin.logout');
-}
+Route::group(
+    [
+        'middleware' => ['auth', 'checkRole:Warga'],
+        'prefix' => 'Warga'
+    ],
+    function () {
+        Route::get('/', [DashboardController::class, 'indexWarga']);
+        /**
+         * route for logout process
+         */
+        Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->name('admin.logout');
+    }
 );
+
+Route::get('/warga', [WargaController::class, 'index']);
