@@ -38,10 +38,10 @@
 
             <div class="mb-md-5 mt-md-4 pb-5">
 
-              <h2 class="fw-bold mb-2 text-uppercase">Masuk</h2>
-              <p class="text-white-50 mb-5">Silahkan Masukkan nama pengguna dan kata sandi anda</p>
+              <h2 class="fw-bold mb-2 text-uppercase">Daftar</h2>
+              <p class="text-white-50 mb-5">Daftarkan nama pengguna dan kata sandi anda</p>
 
-              <form id="login-form" method="post" action="{{ route('login.auth') }}">
+              {{-- <form id="login-form" method="post" action="{{ route('login.auth') }}"> --}}
                 @csrf
 
                 <div data-mdb-input-init class="form-outline form-white mb-4">
@@ -56,14 +56,14 @@
                   <small id="passwordError" class="error-message hidden"></small>
                 </div>
 
-                <p class="small mb-5 pb-lg-2"><a class="text-blue-50" href="#!">Lupa password?</a></p>
+                {{-- <p class="small mb-5 pb-lg-2"><a class="text-blue-50" href="#!">Lupa password?</a></p> --}}
 
-                <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit">Masuk</button>
+                <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit">Daftar</button>
               </form>
             </div>
 
             <div>
-                <p class="mb-0">Belum Punya Akun? <a href="{{ route('register') }}" class="text-blue-50 fw-bold">Daftar</a>
+                <p class="mb-0">Sudah Punya Akun? <a href="{{ route('login') }}" class="text-blue-50 fw-bold">Masuk</a>
                 </p>
             </div>
 
@@ -78,29 +78,3 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-<script>
-    document.getElementById("login-form").addEventListener("submit", function (event) {
-        let pwd = document.getElementById("password").value;
-        let passwordError = document.getElementById("passwordError");
-        let valid = true;
-
-        passwordError.classList.add("hidden");
-
-        if (!/[0-9]/.test(pwd)) {
-            passwordError.textContent = "Password harus memiliki setidaknya 1 angka.";
-            passwordError.classList.remove("hidden");
-            valid = false;
-        }
-        if (pwd.length < 8) {
-            passwordError.textContent = "Password minimal 8 karakter.";
-            passwordError.classList.remove("hidden");
-            valid = false;
-        }
-        if (!valid) {
-            event.preventDefault();
-        }
-    });
-</script>
-</body>
-</html>
