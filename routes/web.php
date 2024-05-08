@@ -23,12 +23,13 @@ use App\Http\Controllers\RegisterController;
 //    return view('welcome');
 //});
 
-//Route::get('/warga', [WargaController::class, 'index']);
-//Route::get('/rukun_tetangga', [RTController::class, 'index']);
-//Route::get('/rukun_warga', [RWController::class, 'index']);
+Route::get('/', function () {
+    return redirect('/login');
+});
 
-Route::get('/', [LoginController::class, 'index'])->name('login');
-Route::post('/', [LoginController::class, 'authenticate'])->name('login.auth');
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate'])->name('login.auth');
 
 Route::group(
     [
@@ -44,5 +45,32 @@ Route::group(
     }
 );
 
-Route::get('/warga', [WargaController::class, 'index']);
+Route::group(
+    [
+        'middleware' => ['auth', 'checkRole:RW'],
+        'prefix' => 'RW'
+    ],
+    function () {
+        Route::get('/', [DashboardController::class, 'indexRW']);
+        /**
+         * route for logout process
+         */
+        Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->name('admin.logout');
+    }
+);
+
+Route::group(
+    [
+        'middleware' => ['auth', 'checkRole:RT'],
+        'prefix' => 'RT'
+    ],
+    function () {
+        Route::get('/', [DashboardController::class, 'indexRT']);
+        /**
+         * route for logout process
+         */
+        Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->name('admin.logout');
+    }
+);
+
 Route::get('/register', [RegisterController::class, 'index'])->name('register');

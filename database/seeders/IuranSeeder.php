@@ -14,9 +14,9 @@ class IuranSeeder extends Seeder
     {
         $currenttimestamp = now();
         $data = [
-            [ 'nominal' => 'Rp 25.000 ', 'tanggal_masuk' => '2024-01-01', 'created_at' => $currenttimestamp, 'id_RT'=>'4'],
+            [ 'nominal' => 'Rp 25.000 ', 'tanggal_masuk' => '2024-01-01', 'created_at' => $currenttimestamp, 'id_RT'=>'2'],
 
-            
+
         ];
         DB::table('t_iuran')->insert($data);
     }

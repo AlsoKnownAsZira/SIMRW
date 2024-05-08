@@ -10,4 +10,14 @@ class DashboardController extends Controller
     {
         return view('Warga');
     }
+
+    public function indexRW()
+    {
+        return view('rukun_warga');
+    }
+
+    public function indexRT()
+    {
+        return view('rukun_tetangga');
+    }
 }
