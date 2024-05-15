@@ -20,4 +20,14 @@ class DashboardController extends Controller
     {
         return view('rukun_tetangga');
     }
+    public function index()
+    {
+        $breadcrumb = (object)[
+            'title' => 'Dashboard',
+            'list' =>['Home','Welcome']
+        ];
+        $activeMenu = 'dashboard';
+    
+        return view('welcome', ['breadcrumb' =>$breadcrumb, 'activeMenu'=> $activeMenu ]);
+    }
 }
