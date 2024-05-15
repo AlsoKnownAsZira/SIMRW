@@ -24,7 +24,7 @@ class DashboardController extends Controller
     {
         $breadcrumb = (object)[
             'title' => 'Dashboard',
-            'list' =>['Home','Welcome']
+            // 'list' =>['Home','Welcome']
         ];
         $activeMenu = 'dashboard';
     
