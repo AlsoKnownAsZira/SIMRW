@@ -20,4 +20,8 @@ class DashboardController extends Controller
     {
         return view('rukun_tetangga');
     }
+    public function index()
+    {
+        return view('home');
+    }
 }
