@@ -20,19 +20,19 @@
    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
    <!-- ... -->
 
-   
+
     @stack('css')
 </head>
 <body>
     <div class="wrapper" style="display: flex; flex-direction: row;">
         <!-- Main Sidebar Container -->
         <div class="col-md-2" style="position: sticky; top: 0;">
-            @include('layouts.sidebar')
+            @include('pengurus.layouts.sidebar')
         </div>
 
         <div style="flex-grow: 1;">
             <!-- Navbar -->
-            @include('layouts.header')
+            @include('pengurus.layouts.header')
             <!-- /.navbar -->
 
             <div class="container-fluid">
@@ -55,7 +55,7 @@
             </div>
 
 
-        @include('layouts.footer')
+        @include('pengurus.layouts.footer')
     </div>
     <!-- ./wrapper -->
 

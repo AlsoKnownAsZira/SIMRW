@@ -1,4 +1,4 @@
-@extends('layouts.template')
+@extends('pengurus.layouts.template')
 
 @section('content')
 <style>
@@ -29,7 +29,7 @@
                         <div class="row">
                             <div class="col-5 col-md-4">
                                 <div class="icon-big text-center icon-warning" style="margin-top: 20px;">
-                                    <i class="fa-solid fa-address-card" style="color: white; font-size: 50px;"></i> 
+                                    <i class="fa-solid fa-address-card" style="color: white; font-size: 50px;"></i>
                                 </div>
                             </div>
                             <div class="col-7 col-md-8">
@@ -89,7 +89,7 @@
                         <div class="row">
                             <div class="col-5 col-md-4">
                                 <div class="icon-big text-center icon-warning" style="margin-top: 20px;">
-                                    <i class="fa-solid fa-envelope" style="color: white; font-size: 50px;"></i> 
+                                    <i class="fa-solid fa-envelope" style="color: white; font-size: 50px;"></i>
                                 </div>
                             </div>
                             <div class="col-7 col-md-8">

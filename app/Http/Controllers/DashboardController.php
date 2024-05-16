@@ -8,28 +8,34 @@ class DashboardController extends Controller
 {
     public function indexWarga()
     {
-        return view('Warga');
-    }
-
-    public function indexRW()
-    {
-        return view('rukun_warga');
-    }
-
-    public function indexRT()
-    {
-        return view('rukun_tetangga');
-    }
-    public function index()
-    {
-
         $breadcrumb = (object)[
             'title' => 'Dashboard',
             // 'list' =>['Home','Welcome']
         ];
         $activeMenu = 'dashboard';
-    
-        return view('welcome', ['breadcrumb' =>$breadcrumb, 'activeMenu'=> $activeMenu ]);
 
+        return view('Warga', ['breadcrumb' => $breadcrumb, 'activeMenu' => $activeMenu]);
+    }
+
+    public function indexRW()
+    {
+        $breadcrumb = (object)[
+            'title' => 'Dashboard',
+            // 'list' =>['Home','Welcome']
+        ];
+        $activeMenu = 'dashboard';
+
+        return view('pengurus.index', ['breadcrumb' => $breadcrumb, 'activeMenu' => $activeMenu]);
+    }
+
+    public function indexRT()
+    {
+        $breadcrumb = (object)[
+            'title' => 'Dashboard',
+            // 'list' =>['Home','Welcome']
+        ];
+        $activeMenu = 'dashboard';
+
+        return view('pengurus.index', ['breadcrumb' => $breadcrumb, 'activeMenu' => $activeMenu]);
     }
 }

@@ -13,8 +13,14 @@ class AduanController extends Controller
      */
     public function index()
     {
+        $breadcrumb = (object)[
+            'title' => 'Dashboard',
+            // 'list' =>['Home','Welcome']
+        ];
+        $activeMenu = 'pengaduan';
+
         $aduan = AduanModel::all();
-        return view('aduan.index', compact('aduan'));
+        return view('aduan.index', ['breadcrumb' => $breadcrumb, 'activeMenu' => $activeMenu, 'aduan' => $aduan]);
     }
 
     /**

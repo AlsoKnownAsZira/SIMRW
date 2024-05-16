@@ -29,7 +29,7 @@
             </li>
             <br>
             <li class="nav-item">
-                <a href="{{ url('/level') }}" class="nav-link {{ ($activeMenu == 'level')? 'active' : '' }} ">
+                <a href="{{ url('/aduan') }}" class="nav-link {{ ($activeMenu == 'pengaduan')? 'active' : '' }} ">
                     <i class="nav-icon fas fa-layer-group"></i>
                     <p>KELUHAN</p>
                 </a>
