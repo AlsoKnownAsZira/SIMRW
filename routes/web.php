@@ -76,3 +76,7 @@ Route::group(
 );
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
+
+use App\Http\Controllers\AduanController;
+
+Route::resource('aduan', AduanController::class);
