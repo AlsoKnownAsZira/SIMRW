@@ -8,17 +8,17 @@
 }
 
 .active {
-    @apply bg-blue-700 text-white outline-white;
+    @apply bg-yellow-400 text-white outline-white;
 }
 
 .activeHeader {
-    @apply border-b-[3px] border-blue-700;
+    @apply border-b-[3px] border-[#33363F];
 }
 
-.bg-posyandu {
+/* .bg-posyandu {
     @apply bg-[url('../../public/img/background1.png')] h-[600px] bg-cover bg-no-repeat;
 }
 
 .bg-berita {
     @apply bg-[url('../../public/img/background2.png')] h-[600px] bg-cover bg-no-repeat;
-}
+} */

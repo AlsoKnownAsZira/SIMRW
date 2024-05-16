@@ -19,9 +19,11 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+// Route::get('/welcome', function () {
+//     return view('welcome');
+// });
+
+Route::get('/welcome', [DashboardController::class, 'index']);
 
 Route::get('/', function () {
     return redirect('/login');

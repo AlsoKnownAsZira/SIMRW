@@ -22,6 +22,14 @@ class DashboardController extends Controller
     }
     public function index()
     {
-        return view('home');
+
+        $breadcrumb = (object)[
+            'title' => 'Dashboard',
+            // 'list' =>['Home','Welcome']
+        ];
+        $activeMenu = 'dashboard';
+    
+        return view('welcome', ['breadcrumb' =>$breadcrumb, 'activeMenu'=> $activeMenu ]);
+
     }
 }
